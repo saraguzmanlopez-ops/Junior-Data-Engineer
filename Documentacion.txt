@@ -1,0 +1,103 @@
+Archivo con  84351 datos 
+            8 Columnas:
+
+            site_id, tipo INT 
+                        no nulos
+                        dupicados  no tiene sentido pq son categoricas 
+                    4 categorias :  
+                        60060    39.69 % -- 33483 datos 
+                        60190    29.31 % -- 24726 datos
+                        60970    22.70 % -- 19148 datos
+                        61602     8.29 % --  6995 datos 
+            date,  tipo STRING  
+                        no tiene nulos 
+                        solo es en 2022
+                         los dias que mas aparecen son:
+                                    2022-06-02    315 - 0.37
+                                    2022-12-25    312 - 0.37
+                                    2022-05-29    312 - 0.37
+                                    2022-06-18    311 - 0.37
+                                    2022-06-19    310 - 0.37
+
+                        los dias que menos aparecen son:
+                                    22022-08-20    0.11 --  93
+                         
+            product_id', 51 id diferentes
+                        no nulos
+                        los 5 productos que mas aparecen son:
+                                    2010007    11093
+                                    2010009     8939
+                                    2010011     5133
+                                    2010006     5110
+                                    2010010     4819
+                        los 5 productos que menos aparecen son:
+                                    2010007    11093
+                                    2010009     8939
+                                    2010011     5133
+                                    2010006     5110
+                                    2010010     4819
+
+                                    2010007    11093 el que mas
+                                    2010010     4819 el que menos 
+
+
+            category1_id', 3 categorias  
+                            tipo INT
+                            not null
+                             119    68663 -- 81.40% 
+                            159    13358  --15.84%
+                            153     2331  --  2.76% 
+
+
+
+
+            hour' sin nulos
+                    tipo INT,
+                    se vende en todas las horas del dia, pero hay horas que se venden mas que otras
+           
+                    horas mas vendidas:
+                        7     5.94
+                        20    5.71
+                        19    5.42
+                        8     5.36
+                        21    5.21
+                    horas menos vendidas:
+                        1    2.62
+                        5    2.46
+                        2    1.97
+                        4    1.74
+                        3    1.64
+           
+           
+            units' solo 4 categorias 1.,2.,3.,0.
+                    tipo INT
+                    no nulos
+                    1.0    59862 -- 70.97 %
+                    2.0    18346 -- 21.73 %
+                    3.0     5909 -- 7.01 %
+                    0.0      235 -- 0.28 %
+            total' numero en notaccion cientifica
+                    tipo FLOAT
+                    no nulos
+                    maximo: 17.0
+                    minimo: -0.7900000000000001
+            site_name' 5 tiendas diferentes
+                    tipo STRING
+                    no nulos
+                    5 categorias:
+                        Tienda Norte    32180
+                        Tienda Oeste    24942
+                        Tienda Sur      20125
+                        Tienda Este      6779
+                        Tienda            326
+
+
+            * TRANSFORMACIONES:
+               - site_id :
+                    cambiado a tipo STRING ya que son falsas categorias y no se pueden realizar operaciones matematicas con ellas
+                - date :
+                    cambiado a tipo DATE para poder realizar operaciones de tiempo
+                    valorar si se puede extraer el mes y el año para poder realizar operaciones de tiempo
+                - total: 
+        
+                    cambiar de notacion cientifica a float
